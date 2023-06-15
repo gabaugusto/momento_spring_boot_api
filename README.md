@@ -18,8 +18,11 @@ Postman: Uma plataforma de colaboração para desenvolvimento e teste de API, qu
 Essa API mostrará os seguintes recursos:
 
 Operações CRUD: A API oferece suporte a operações básicas CRUD (Criar, Ler, Atualizar, Excluir) para uma entidade específica.
+
 Arquitetura RESTful: A API segue os princípios de Representational State Transfer (REST), fornecendo uma interface uniforme para interagir com os recursos.
+
 Validação: os dados da solicitação são validados para garantir que atendam aos critérios exigidos antes do processamento.
+
 Sinta-se à vontade para explorar e modificar o código para saber mais sobre como criar APIs com Java SpringBoot.
 
 
