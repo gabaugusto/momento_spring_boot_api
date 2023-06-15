@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,31 +9,35 @@ import jakarta.persistence.Table;
 @Table(schema = "departamento")
 public class Departamento {
     @Id
-    int departamento_id;
-    String departamento_nome;
-    int escritorio_id;
+    @Column(name = "departamento_id", nullable = false)
+    int departamentoId;
+    @Column(name = "departamento_nome", nullable = false)
+    String departamentoNome;
 
-    public int getDepartamento_id() {
-        return departamento_id;
+    @Column(name = "escritorio_id", nullable = false)
+    int escritorioId;
+
+    public int getDepartamentoId() {
+        return departamentoId;
     }
 
-    public void setDepartamento_id(int departamento_id) {
-        this.departamento_id = departamento_id;
+    public void setDepartamentoId(int departamentoId) {
+        this.departamentoId = departamentoId;
     }
 
-    public String getDepartamento_nome() {
-        return departamento_nome;
+    public String getDepartamentoNome() {
+        return departamentoNome;
     }
 
-    public void setDepartamento_nome(String departamento_nome) {
-        this.departamento_nome = departamento_nome;
+    public void setDepartamentoNome(String departamentoNome) {
+        this.departamentoNome = departamentoNome;
     }
 
-    public int getEscritorio_id() {
-        return escritorio_id;
+    public int getEscritorioId() {
+        return escritorioId;
     }
 
-    public void setEscritorio_id(int escritorio_id) {
-        this.escritorio_id = escritorio_id;
+    public void setEscritorioId(int escritorioId) {
+        this.escritorioId = escritorioId;
     }
 }

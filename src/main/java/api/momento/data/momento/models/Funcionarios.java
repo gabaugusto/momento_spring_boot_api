@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,24 +12,29 @@ import java.util.Date;
 public class Funcionarios {
 
     @Id
-    int funcionario_id;
+    @Column(name = "funcionario_id", nullable = false)
+    int funcionarioId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore, então, renomeamos essa coluna dentro do Spring
     String nome;
     String email;
     String senha;
     String telefone;
-    Date data_contratacao;
-    int cargo_id;
+    @Column(name = "data_contratacao", nullable = false)
+    Date dataContratacao;
+    @Column(name = "cargo_id", nullable = false)
+    int cargoId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore, então, renomeamos essa coluna dentro do Spring
     Float salario;
 
-    int gerente_id;
-    int departamento_id;
+    @Column(name = "gerente_id", nullable = false)
+    int gerenteId;
+    @Column(name = "departamento_id", nullable = false)
+    int departamentoId;
 
-    public int getFuncionario_id() {
-        return funcionario_id;
+    public int getFuncionarioId() {
+        return funcionarioId;
     }
 
-    public void setFuncionario_id(int funcionario_id) {
-        this.funcionario_id = funcionario_id;
+    public void setFuncionarioId(int funcionarioId) {
+        this.funcionarioId = funcionarioId;
     }
 
     public String getNome() {
@@ -63,20 +69,20 @@ public class Funcionarios {
         this.telefone = telefone;
     }
 
-    public Date getData_contratacao() {
-        return data_contratacao;
+    public Date getDataContratacao() {
+        return dataContratacao;
     }
 
-    public void setData_contratacao(Date data_contratacao) {
-        this.data_contratacao = data_contratacao;
+    public void setDataContratacao(Date dataContratacao) {
+        this.dataContratacao = dataContratacao;
     }
 
-    public int getCargo_id() {
-        return cargo_id;
+    public int getCargoId() {
+        return cargoId;
     }
 
-    public void setCargo_id(int ocupacao_id) {
-        this.cargo_id = ocupacao_id;
+    public void setCargoId(int cargoId) {
+        this.cargoId = cargoId;
     }
 
     public Float getSalario() {
@@ -87,19 +93,19 @@ public class Funcionarios {
         this.salario = salario;
     }
 
-    public int getGerente_id() {
-        return gerente_id;
+    public int getGerenteId() {
+        return gerenteId;
     }
 
-    public void setGerente_id(int gerente_id) {
-        this.gerente_id = gerente_id;
+    public void setGerenteId(int gerenteId) {
+        this.gerenteId = gerenteId;
     }
 
-    public int getDepartamento_id() {
-        return departamento_id;
+    public int getDepartamentoId() {
+        return departamentoId;
     }
 
-    public void setDepartamento_id(int departamento_id) {
-        this.departamento_id = departamento_id;
+    public void setDepartamentoId(int departamentoId) {
+        this.departamentoId = departamentoId;
     }
 }

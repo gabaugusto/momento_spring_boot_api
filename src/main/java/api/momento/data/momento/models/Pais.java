@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,31 +9,35 @@ import jakarta.persistence.Table;
 @Table(schema = "pais")
 public class Pais {
     @Id
-    String pais_id;
-    String pais_nome;
-    int regiao_id;
+    @Column(name = "pais_id", nullable = false)
+    String paisId;
 
-    public String getPais_id() {
-        return pais_id;
+    @Column(name = "pais_nome", nullable = false)
+    String paisNome;
+    @Column(name = "regiao_id", nullable = false)
+    int regiaoId;
+
+    public String getPaisId() {
+        return paisId;
     }
 
-    public void setPais_id(String pais_id) {
-        this.pais_id = pais_id;
+    public void setPaisId(String paisId) {
+        this.paisId = paisId;
     }
 
-    public String getPais_nome() {
-        return pais_nome;
+    public String getPaisNome() {
+        return paisNome;
     }
 
-    public void setPais_nome(String pais_nome) {
-        this.pais_nome = pais_nome;
+    public void setPaisNome(String paisNome) {
+        this.paisNome = paisNome;
     }
 
-    public int getRegiao_id() {
-        return regiao_id;
+    public int getRegiaoId() {
+        return regiaoId;
     }
 
-    public void setRegiao_id(int regiao_id) {
-        this.regiao_id = regiao_id;
+    public void setRegiaoId(int regiaoId) {
+        this.regiaoId = regiaoId;
     }
 }

@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,22 +9,24 @@ import jakarta.persistence.Table;
 @Table(schema = "regiao")
 public class Regiao {
     @Id
-    int regiao_id;
-    String regiao_nome;
+    @Column(name = "regiao_id", nullable = false)
+    int regiaoId;
+    @Column(name = "regiao_nome", nullable = false)
+    String regiaoNome;
 
-    public int getRegiao_id() {
-        return regiao_id;
+    public int getRegiaoId() {
+        return regiaoId;
     }
 
-    public void setRegiao_id(int regiao_id) {
-        this.regiao_id = regiao_id;
+    public void setRegiaoId(int regiaoId) {
+        this.regiaoId = regiaoId;
     }
 
-    public String getRegiao_nome() {
-        return regiao_nome;
+    public String getRegiaoNome() {
+        return regiaoNome;
     }
 
-    public void setRegiao_nome(String regiao_nome) {
-        this.regiao_nome = regiao_nome;
+    public void setRegiaoNome(String regiaoNome) {
+        this.regiaoNome = regiaoNome;
     }
 }

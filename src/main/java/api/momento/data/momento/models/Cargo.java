@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,42 +9,47 @@ import jakarta.persistence.Table;
 @Table(schema = "cargo")
 public class Cargo {
     @Id
-    int cargo_id;
-    String cargo_nome;
+    @Column(name = "cargo_id", nullable = false)
+    int cargoId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
 
-    float min_salario;
+    @Column(name = "cargo_nome", nullable = false)
+    String cargoNome; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
 
-    float max_salario;
+    @Column(name = "min_salario", nullable = false)
+    float minSalario;; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
 
-    public int getCargo_id() {
-        return cargo_id;
+    @Column(name = "max_salario", nullable = false)
+    float maxSalario;
+
+    public int getCargoId() {
+        return cargoId;
     }
 
-    public void setCargo_id(int cargo_id) {
-        this.cargo_id = cargo_id;
+    public void setCargoId(int cargoId) {
+        this.cargoId = cargoId;
     }
 
-    public String getCargo_nome() {
-        return cargo_nome;
+    public String getCargoNome() {
+        return cargoNome;
     }
 
-    public void setCargo_nome(String cargo_nome) {
-        this.cargo_nome = cargo_nome;
+    public void setCargoNome(String cargoNome) {
+        this.cargoNome = cargoNome;
     }
 
-    public float getMin_salario() {
-        return min_salario;
+    public float getMinSalario() {
+        return minSalario;
     }
 
-    public void setMin_salario(float min_salario) {
-        this.min_salario = min_salario;
+    public void setMinSalario(float minSalario) {
+        this.minSalario = minSalario;
     }
 
-    public float getMax_salario() {
-        return max_salario;
+    public float getMaxSalario() {
+        return maxSalario;
     }
 
-    public void setMax_salario(float max_salario) {
-        this.max_salario = max_salario;
+    public void setMaxSalario(float maxSalario) {
+        this.maxSalario = maxSalario;
     }
 }

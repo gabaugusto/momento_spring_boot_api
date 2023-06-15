@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,7 +9,8 @@ import jakarta.persistence.Table;
 @Table(schema = "escritorio")
 public class Escritorio {
     @Id
-    int escritorio_id;
+    @Column(name = "escritorio_id", nullable = false)
+    int escritorioId;
     String endereco;
     String cep;
 
@@ -16,14 +18,15 @@ public class Escritorio {
 
     String estado;
 
-    String pais_id;
+    @Column(name = "pais_id", nullable = false)
+    String paisId;
 
-    public int getEscritorio_id() {
-        return escritorio_id;
+    public int getEscritorioId() {
+        return escritorioId;
     }
 
-    public void setEscritorio_id(int escritorio_id) {
-        this.escritorio_id = escritorio_id;
+    public void setEscritorioId(int escritorioId) {
+        this.escritorioId = escritorioId;
     }
 
     public String getEndereco() {
@@ -58,11 +61,11 @@ public class Escritorio {
         this.estado = estado;
     }
 
-    public String getPais_id() {
-        return pais_id;
+    public String getPaisId() {
+        return paisId;
     }
 
-    public void setPais_id(String pais_id) {
-        this.pais_id = pais_id;
+    public void setPaisId(String paisId) {
+        this.paisId = paisId;
     }
 }

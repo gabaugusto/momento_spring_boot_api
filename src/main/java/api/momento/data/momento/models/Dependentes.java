@@ -1,5 +1,6 @@
 package api.momento.data.momento.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,18 +9,19 @@ import jakarta.persistence.Table;
 @Table(schema = "dependentes")
 public class Dependentes {
     @Id
-    int dependente_id;
+    @Column(name = "dependente_id", nullable = false)
+    int dependenteId;
     String nome;
     String parentesco;
-
-    int funcionario_id;
+    @Column(name = "funcionario_id", nullable = false)
+    int funcionarioId;
 
     public int getDependente_id() {
-        return dependente_id;
+        return dependenteId;
     }
 
     public void setDependente_id(int dependente_id) {
-        this.dependente_id = dependente_id;
+        this.dependenteId = dependente_id;
     }
 
     public String getNome() {
@@ -39,10 +41,10 @@ public class Dependentes {
     }
 
     public int getFuncionario_id() {
-        return funcionario_id;
+        return funcionarioId;
     }
 
-    public void setFuncionario_id(int funcionario_id) {
-        this.funcionario_id = funcionario_id;
+    public void setFuncionario_id(int funcionarioId) {
+        this.funcionarioId = funcionarioId;
     }
 }
