@@ -1,6 +1,8 @@
 # API da Empresa Momento (para Estudantes)
 
-Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados relacionados a Funcionários, Escritórios e muito mais. É uma ótima maneira de aprender e explorar o desenvolvimento de APIs usando o Spring Boot.
+Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados relacionados a Funcionários, Escritórios e muito mais. 
+
+É uma ótima maneira de aprender e explorar o desenvolvimento de APIs usando o Spring Boot.
 
 Este projeto é uma API básica construída usando Java SpringBoot. Ele serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
 
@@ -114,7 +116,8 @@ Para executar localmente a API da Empresa Momento, siga estas etapas:
 
 ## Contribuindo
 
-Se você encontrar algum problema ou tiver sugestões para melhorar esta API, sinta-se à vontade para abrir um issue neste repositório. Ficaremos felizes em receber contribuições e melhorar continuamente a API.
+Se você encontrar algum problema ou tiver sugestões para melhorar esta API, sinta-se à vontade para abrir um issue neste repositório. 
+Ficaremos felizes em receber contribuições e melhorar continuamente a API.
 
 ## Licença
 
@@ -122,4 +125,6 @@ Esta API está licenciada sob a [Licença MIT](https://opensource.org/licenses/M
 
 ---
 
-Esperamos que você aproveite a API da Empresa Momento! Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato conosco. Boa explora
+Esperamos que você aproveite a API da Empresa Momento! 
+
+Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato conosco. Boa explora
