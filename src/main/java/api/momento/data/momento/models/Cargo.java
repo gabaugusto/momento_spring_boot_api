@@ -13,10 +13,10 @@ public class Cargo {
     int cargoId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
 
     @Column(name = "cargo_nome", nullable = false)
-    String cargoNome; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
+    String cargoNome;
 
     @Column(name = "min_salario", nullable = false)
-    float minSalario;; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore.
+    float minSalario;;
 
     @Column(name = "max_salario", nullable = false)
     float maxSalario;
