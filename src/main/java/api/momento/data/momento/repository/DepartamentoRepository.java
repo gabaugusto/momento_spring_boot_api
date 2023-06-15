@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 @Repository
 public interface DepartamentoRepository extends JpaRepository<Departamento, UUID> {
-    // Adicione aqui métodos específicos para a outra tabela, se necessário
+
     Optional<Departamento> findDepartamentoBydepartamentoId(int id);
 
     Optional<Departamento> findDepartamentoBydepartamentoNome(String nome);
