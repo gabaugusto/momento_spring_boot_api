@@ -16,30 +16,30 @@ public class FuncionariosController {
     FuncionariosRepository dbConnection;
 
     @CrossOrigin
-    @GetMapping("/todos")
+    @GetMapping("/")
     public List<Funcionarios> findAllRecords(){
         return dbConnection.findAll();
     }
 
 
     //Encontrar um único elemento por id
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchById(@PathVariable int id) {
         return dbConnection.findFuncionariosByfuncionarioId(id);
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/nome/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchByName(@PathVariable String nome) {
         return dbConnection.findFuncionariosBynome(nome);
     }
 
-    @RequestMapping(value = "buscar/email/{email}", method = RequestMethod.GET)
+    @RequestMapping(value = "email/{email}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchByEmail(@PathVariable String email) {
         return dbConnection.findFuncionariosByemail(email);
     }
 
-    @RequestMapping(value = "buscar/departamento/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "departamento/{id}", method = RequestMethod.GET)
     public List<Funcionarios> searchByDepartament(@PathVariable int id) {
         return dbConnection.findFuncionariosBydepartamentoId(id);
     }

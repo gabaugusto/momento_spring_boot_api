@@ -21,13 +21,13 @@ public class PaisController {
     }
 
     //Encontrar um único elemento por id
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Pais> searchById(@PathVariable String id) {
         return dbConnection.findPaisBypaisId(id);
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/nome/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Pais> searchByName(@PathVariable String nome) {
         return dbConnection.findPaisBypaisNome(nome);
     }

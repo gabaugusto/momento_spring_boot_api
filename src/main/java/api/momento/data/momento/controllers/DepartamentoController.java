@@ -20,13 +20,13 @@ public class DepartamentoController {
         return dbConnection.findAll();
     }
 
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Departamento> searchById(@PathVariable int id) {
         return dbConnection.findDepartamentoBydepartamentoId(id);
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/nome/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Departamento> searchByName(@PathVariable String nome) {
         return dbConnection.findDepartamentoBydepartamentoNome(nome);
     }

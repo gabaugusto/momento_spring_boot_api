@@ -21,18 +21,18 @@ public class EscritorioController {
     }
 
 
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Escritorio> searchById(@PathVariable int id) {
         return dbConnection.findEscritorioByescritorioId(id);
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/cidade/{cidade}", method = RequestMethod.GET)
+    @RequestMapping(value = "cidade/{cidade}", method = RequestMethod.GET)
     public List<Escritorio> searchByName(@PathVariable String cidade) {
         return dbConnection.findEscritorioBycidade(cidade);
     }
 
-    @RequestMapping(value = "buscar/pais/{paisId}", method = RequestMethod.GET)
+    @RequestMapping(value = "pais/{paisId}", method = RequestMethod.GET)
     public List<Escritorio> searchByFuncionarioID(@PathVariable  String paisId) {
         return dbConnection.findEscritorioBypaisId(paisId);
     }

@@ -21,13 +21,13 @@ public class CargoController {
     }
 
     //Encontrar um único elemento por id
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Cargo> searchById(@PathVariable int id) {
         return dbConnection.findCargoBycargoId(id);
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/nome/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Cargo> searchByName(@PathVariable String nome) {
         return dbConnection.findCargoBycargoNome(nome);
     }

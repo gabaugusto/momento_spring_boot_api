@@ -27,12 +27,12 @@ public class DependentesController {
     }
 
     //Encontrar um único elemento por nome
-    @RequestMapping(value = "buscar/nome/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Dependentes> searchByName(@PathVariable String nome) {
         return dbConnection.findDependentesBynome(nome);
     }
 
-    @RequestMapping(value = "buscar/funcionario/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "funcionario/{id}", method = RequestMethod.GET)
     public List<Dependentes> searchByFuncionarioID(@PathVariable  int id) {
         return dbConnection.findDependentesByfuncionarioId(id);
     }
