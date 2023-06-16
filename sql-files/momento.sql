@@ -149,7 +149,7 @@ INSERT INTO departamento(departamento_id,departamento_nome,escritorio_id) VALUES
 INSERT INTO departamento(departamento_id,departamento_nome,escritorio_id) VALUES (11,'Contabilidade',1700);
 
 /*Data for the table funcionarios */
-INSERT INTO funcionarios(funcionario_id,nome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (100,'Steven King','steven.king@momento.org', 'pass1234@6', '515.123.4567','1987-06-17',4,24000.00,0,9);
+INSERT INTO funcionarios(funcionario_id,nome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (100,'Steven King','steven.king@momento.org', 'pass1234@6', '515.123.4567','1987-06-17',4,24000.00,100,9);
 INSERT INTO funcionarios(funcionario_id,nome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (101,'Neena Kochhar','neena.kochhar@momento.org', 'pass1234@6', '515.123.4568','1989-09-21',5,17000.00,100,9);
 INSERT INTO funcionarios(funcionario_id,nome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (102,'Lex De Haan','lex.de haan@momento.org', 'pass1234@6', '515.123.4569','1993-01-13',5,17000.00,100,9);
 INSERT INTO funcionarios(funcionario_id,nome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (103,'Alexander Hunold','alexander.hunold@momento.org', 'pass1234@6', '590.423.4567','1990-01-03',9,9000.00,102,6);
