@@ -32,4 +32,11 @@ public class PaisController {
         return dbConnection.findPaisBypaisNome(nome);
     }
 
+    //Encontrar um único elemento por id da região
+    @RequestMapping(value = "regiao/{id}", method = RequestMethod.GET)
+    public List<Pais> searchByIdRegion(@PathVariable int id) {
+        return dbConnection.findPaisByregiaoId(id);
+    }
+
+
 }

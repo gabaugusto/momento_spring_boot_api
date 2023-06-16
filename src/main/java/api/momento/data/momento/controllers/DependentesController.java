@@ -21,7 +21,7 @@ public class DependentesController {
         return dbConnection.findAll();
     }
 
-    @RequestMapping(value = "buscar/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Dependentes> searchById(@PathVariable int id) {
         return dbConnection.findDependentesBydependenteId(id);
     }
