@@ -1,7 +1,6 @@
 DROP DATABASE IF EXISTS momento;
 CREATE DATABASE IF NOT EXISTS momento;
 USE momento;
-USE momento;
 
 DROP TABLE IF EXISTS regiao;
 CREATE TABLE regiao (
@@ -11,7 +10,7 @@ CREATE TABLE regiao (
 
 DROP TABLE IF EXISTS pais;
 CREATE TABLE pais (
-	pais_id VARCHAR (255) PRIMARY KEY,
+	pais_id VARCHAR (10) PRIMARY KEY,
 	pais_nome VARCHAR (255) DEFAULT NULL,
 	regiao_id INT (11) NOT NULL,
 	FOREIGN KEY (regiao_id) REFERENCES regiao (regiao_id) ON DELETE CASCADE ON UPDATE CASCADE

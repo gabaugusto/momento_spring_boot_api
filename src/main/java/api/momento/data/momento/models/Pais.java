@@ -8,12 +8,16 @@ import jakarta.persistence.Table;
 @Entity//Mostra ao SPRING que é uma tabela
 @Table(schema = "pais")
 public class Pais {
+
     @Id
     @Column(name = "pais_id", nullable = false)
     String paisId;
 
+
     @Column(name = "pais_nome", nullable = false)
     String paisNome;
+
+
     @Column(name = "regiao_id", nullable = false)
     int regiaoId;
 

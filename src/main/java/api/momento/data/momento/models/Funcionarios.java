@@ -14,18 +14,25 @@ public class Funcionarios {
     @Id
     @Column(name = "funcionario_id", nullable = false)
     int funcionarioId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore, então, renomeamos essa coluna dentro do Spring
+
     String nome;
+
     String email;
+
     String senha;
+
     String telefone;
-    @Column(name = "data_contratacao", nullable = false)
+    @Column(name = "data_contratacao")
     Date dataContratacao;
+
     @Column(name = "cargo_id", nullable = false)
     int cargoId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore, então, renomeamos essa coluna dentro do Spring
+
     Float salario;
 
     @Column(name = "gerente_id", nullable = false)
     int gerenteId;
+
     @Column(name = "departamento_id", nullable = false)
     int departamentoId;
 

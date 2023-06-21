@@ -8,9 +8,13 @@ Este projeto é uma API básica construída usando Java SpringBoot. Ele serve co
 
 ## Tecnologias usadas
 Java: A principal linguagem de programação usada para construir a API.
+
 SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
+
 Maven: Uma ferramenta popular de automação de compilação e um sistema de gerenciamento de dependência usado para gerenciar dependências de projeto e criar a API.
+
 Spring Data JPA: Uma parte da estrutura Spring que fornece abstrações convenientes para trabalhar com bancos de dados usando Java Persistence API (JPA).
+
 Postman: Uma plataforma de colaboração para desenvolvimento e teste de API, que pode ser usada para interagir e testar os endpoints da API.
 
 ## Características
