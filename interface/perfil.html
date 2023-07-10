@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfil da Pessoa</title>
+  <!-- Incluindo o CSS do Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Perfil da Pessoa</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <img id="foto" src="" alt="Foto da Pessoa" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" readonly>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input type="password" class="form-control" id="senha" readonly>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" class="form-control" id="telefone" readonly>
+      </div>
+      <div class="form-group">
+        <label for="dataContratacao">Data de Contratação:</label>
+        <input type="date" class="form-control" id="dataContratacao" readonly>
+      </div>
+      <div class="form-group">
+        <label for="cargoId">ID do Cargo:</label>
+        <input type="text" class="form-control" id="cargoId" readonly>
+      </div>
+      <div class="form-group">
+        <label for="salario">Salário:</label>
+        <input type="number" class="form-control" id="salario" readonly>
+      </div>
+      <div class="form-group">
+        <label for="gerenteId">ID do Gerente:</label>
+        <input type="text" class="form-control" id="gerenteId" readonly>
+      </div>
+      <div class="form-group">
+        <label for="departamentoId">ID do Departamento:</label>
+        <input type="text" class="form-control" id="departamentoId" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtém o ID da pessoa a partir da URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var pessoaId = urlParams.get('id');
+
+    // Faz a requisição FETCH para obter os dados da pessoa
+    fetch('http://localhost:8083/funcionarios/id/' + pessoaId)
+      .then(response => response.json())
+      .then(data => {
+        // Preenche os campos do perfil com os dados retornados da API
+        document.getElementById('foto').src = "../avatar/" + pessoaId + ".jpg";
+        document.getElementById('email').value = data.email;
+        document.getElementById('senha').value = data.senha;
+        document.getElementById('telefone').value = data.telefone;
+        document.getElementById('dataContratacao').value = data.dataContratacao;
+        document.getElementById('cargoId').value = data.cargoId;
+        document.getElementById('salario').value = data.salario;
+        document.getElementById('gerenteId').value = data.gerenteId;
+        document.getElementById('departamentoId').value = data.departamentoId;
+      })
+      .catch(error => {
+        // Caso ocorra algum erro na requisição
+        console.log('Erro ao obter os dados da pessoa');
+      });
+  });
+</script>
+
+</body>
+</html>
