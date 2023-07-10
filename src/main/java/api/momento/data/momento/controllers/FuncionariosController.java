@@ -23,23 +23,27 @@ public class FuncionariosController {
 
 
     //Encontrar um único elemento por id
+    @CrossOrigin
     @RequestMapping(value = "id/{id}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchById(@PathVariable int id) {
         return dbConnection.findFuncionariosByfuncionarioId(id);
     }
 
     //Encontrar um único elemento por nome
+    @CrossOrigin
     @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchByName(@PathVariable String nome) {
         return dbConnection.findFuncionariosBynome(nome);
     }
 
     @RequestMapping(value = "email/{email}", method = RequestMethod.GET)
+    @CrossOrigin
     public Optional<Funcionarios> searchByEmail(@PathVariable String email) {
         return dbConnection.findFuncionariosByemail(email);
     }
 
     @RequestMapping(value = "departamento/{id}", method = RequestMethod.GET)
+    @CrossOrigin
     public List<Funcionarios> searchByDepartament(@PathVariable int id) {
         return dbConnection.findFuncionariosBydepartamentoId(id);
     }
