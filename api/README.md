@@ -134,4 +134,4 @@ Esta API está licenciada sob a [Licença MIT](https://opensource.org/licenses/M
 
 Esperamos que você aproveite a API da Empresa Momento! 
 
-Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato conosco. Boa explora
+Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato conosco.
