@@ -25,10 +25,11 @@ Para executar localmente a API da Empresa Momento, siga estas etapas:
 2. Clone este repositório para o seu ambiente local.
 3. Rode o script momento.sql no seu banco MySQL.
 4. Abra o projeto em sua IDE preferida.
-5. Atualize o arquivo application.properties com as configurações do seu ambiente.
+5. Atualize o arquivo `application.properties` com as configurações do seu ambiente.
 6. Execute a classe `MomentoApplication` para iniciar a aplicação.
-7. Acesse `http://localhost:8080` através do ´Postman para interagir com a API localmente .
-8. Utilize a interface vanilla para ver o projeto funcionando. 
+7. Acesse `http://localhost:8080` (porta configurada no  `application.properties`) através do ´Postman para interagir com a API localmente.
+8. Utilize a interface para ver o projeto funcionando. 
+9. Caso seja necessário, atualize o endereço da API dentro do arquivos `.html`.
 
 ## Contribuindo
 
