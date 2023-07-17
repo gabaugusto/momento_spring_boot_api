@@ -7,7 +7,7 @@ Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados 
 Este projeto é uma API básica construída usando Java SpringBoot. Ele serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
 
 ## Tecnologias usadas
-Java: A principal linguagem de programação usada para construir a API.
+Java: A linguagem de programação usada para construir a API.
 
 SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
 
@@ -28,7 +28,6 @@ Arquitetura RESTful: A API segue os princípios de Representational State Transf
 Validação: os dados da solicitação são validados para garantir que atendam aos critérios exigidos antes do processamento.
 
 Sinta-se à vontade para explorar e modificar o código para saber mais sobre como criar APIs com Java SpringBoot.
-
 
 ## Documentação da API
 
