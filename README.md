@@ -6,6 +6,10 @@ Este projeto possui uma API básica construída usando Java SpringBoot. Serve co
 
 ## Tecnologias usadas
 
+HTML e CSS: Tecnologias para desenvolvimento de interface web.
+
+Javascript: Interação do usuário e utilização do fetch para consumo da API. 
+
 Java: Linguagem de programação usada para construir a API.
 
 SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
@@ -16,28 +20,32 @@ Spring Data JPA: Uma parte da estrutura Spring que fornece abstrações convenie
 
 Postman: Uma plataforma de colaboração para desenvolvimento e teste de API, que pode ser usada para interagir e testar os endpoints da API.
 
+MySQL: 
+
+
 ## Configuração & Execução
 
 Para executar localmente a API da Empresa Momento, siga estas etapas:
 
 1. Certifique-se de ter o Java Development Kit (JDK) instalado.
 2. Clone este repositório para o seu ambiente local.
-3. Rode o script ´momento.sql´ no seu banco MySQL.
-4. Abra o projeto que está dentro da pasta ´api´ em sua IDE.
+3. Execute o script `momento.sql` no seu banco MySQL.
+4. Abra o projeto que está dentro da pasta `api` em sua IDE.
 5. Atualize o arquivo `application.properties` com as configurações do seu ambiente.
 6. Execute a classe `MomentoApplication` para iniciar a aplicação.
-7. Acesse `http://localhost:8080` (porta configurada no  `application.properties`) através do ´Postman´ para interagir com a API localmente.
+7. Acesse `http://localhost:8080` (porta configurada no  `application.properties`) através do `Postman` para interagir com a API localmente.
 8. Utilize a interface para ver o projeto funcionando. 
 9. Caso seja necessário, atualize o endereço da API dentro dos arquivos `.html`.
 
 ## Contribuindo
 
-Se você encontrar algum problema ou tiver sugestões para melhorar esta API, sinta-se à vontade para abrir um issue neste repositório. 
-Ficaremos felizes em receber contribuições e melhorar continuamente a API.
+Se você encontrar algum problema ou tiver sugestões para melhorar este projeto, sinta-se à vontade para abrir um issue neste repositório. 
+
+Ficaremos felizes em receber contribuições e melhorar continuamente.
 
 ## Licença
 
-Esta API está licenciada sob a [Licença MIT](https://opensource.org/licenses/MIT).
+Este projeto está licenciada sob a [Licença MIT](https://opensource.org/licenses/MIT).
 
 ---
 
