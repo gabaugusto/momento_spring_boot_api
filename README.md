@@ -7,7 +7,7 @@ Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados 
 Este projeto é uma API básica construída usando Java SpringBoot. Ele serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
 
 ## Tecnologias usadas
-Java: A principal linguagem de programação usada para construir a API.
+Java: Linguagem de programação usada para construir a API.
 
 SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
 
@@ -23,13 +23,13 @@ Para executar localmente a API da Empresa Momento, siga estas etapas:
 
 1. Certifique-se de ter o Java Development Kit (JDK) instalado.
 2. Clone este repositório para o seu ambiente local.
-3. Rode o script momento.sql no seu banco MySQL.
-4. Abra o projeto em sua IDE preferida.
+3. Rode o script ´momento.sql´ no seu banco MySQL.
+4. Abra o projeto que está dentro da pasta ´api´ em sua IDE.
 5. Atualize o arquivo `application.properties` com as configurações do seu ambiente.
 6. Execute a classe `MomentoApplication` para iniciar a aplicação.
-7. Acesse `http://localhost:8080` (porta configurada no  `application.properties`) através do ´Postman para interagir com a API localmente.
+7. Acesse `http://localhost:8080` (porta configurada no  `application.properties`) através do ´Postman´ para interagir com a API localmente.
 8. Utilize a interface para ver o projeto funcionando. 
-9. Caso seja necessário, atualize o endereço da API dentro do arquivos `.html`.
+9. Caso seja necessário, atualize o endereço da API dentro dos arquivos `.html`.
 
 ## Contribuindo
 
