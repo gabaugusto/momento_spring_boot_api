@@ -7,12 +7,25 @@ Esta base de dados foi criada para o projeto "Momento", e tem como objetivo emul
 
 As tabelas presentes nesta base de dados são as seguintes:
 
+Essa mesma base pode ser usada para trabalhar com comandos básicos em SQL, praticar a extração de informações ou ampliar o repertório do desenvolvedor como um todo. 
+
+Exemplos:
+
+1) Quais são os cargos que recebem a melhor remuneração?
+
+2) Quais departamentos possuem as melhores médias salariais?
+
+3) O fato de países não usarem identificadores numéricos e não sequenciais muda algo para o desenvolvimento?
+
+## Tabelas
+
 1. Tabela `cargos`: Armazena informações sobre os diferentes cargos na empresa.
 2. Tabela `funcionários`: Contém detalhes sobre os funcionários contratados.
 3. Tabela `dependentes`: Registra informações dos dependentes associados a cada funcionário.
 4. Tabela `regiões`: Lista as regiões disponíveis na empresa.
 5. Tabela `países`: Mantém o registro dos países relacionados às regiões.
 6. Tabela `escritórios`: Armazena dados sobre os escritórios da empresa.
+7. Tabela `departamentos`: Armazena dados sobre os diferentes departamentos da empresa.
 
 ## Importando a Base de Dados
 Para utilizar esta base de dados em seu projeto, você pode importar o arquivo SQL fornecido e executá-lo em seu servidor de banco de dados compatível com SQL (por exemplo, MySQL, PostgreSQL, SQLite, etc.).
