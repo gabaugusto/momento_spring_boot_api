@@ -1,4 +1,4 @@
-# API da Empresa Momento (para Estudantes)
+# API do Projeto Momento 
 
 Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados relacionados a Funcionários, Escritórios e muito mais. 
 
