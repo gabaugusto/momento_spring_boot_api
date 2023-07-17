@@ -1,12 +1,11 @@
 # Projeto Momento (para Estudantes)
 
-Bem-vindo à API da Empresa Momento! Esta API foi projetada para fornecer dados relacionados a Funcionários, Escritórios e muito mais. 
+Bem-vindo à API da Projeto Momento! Este projeto foi criado para aprender e explorar o desenvolvimento de APIs usando o Spring Boot.
 
-É uma ótima maneira de aprender e explorar o desenvolvimento de APIs usando o Spring Boot.
-
-Este projeto é uma API básica construída usando Java SpringBoot. Ele serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
+Este projeto possui uma API básica construída usando Java SpringBoot. Serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
 
 ## Tecnologias usadas
+
 Java: Linguagem de programação usada para construir a API.
 
 SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
@@ -17,7 +16,7 @@ Spring Data JPA: Uma parte da estrutura Spring que fornece abstrações convenie
 
 Postman: Uma plataforma de colaboração para desenvolvimento e teste de API, que pode ser usada para interagir e testar os endpoints da API.
 
-## Configuração
+## Configuração & Execução
 
 Para executar localmente a API da Empresa Momento, siga estas etapas:
 
