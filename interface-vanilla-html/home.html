@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <title>Momento | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gabriel Augusto - gabrielaugusto.me">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" href="assets/images/bootstrap-logo-shadow.png" sizes="180x180">
+    <link rel="icon" href="assets/images/bootstrap-logo-shadow.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/images/bootstrap-logo-shadow.png" sizes="16x16" type="image/png">
+    <meta name="theme-color" content="#712cf9">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="home.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Logout</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <h2>Funcionários</h2>
+        <div class="table-responsive small">
+            <table id="response-funcionarios" class="table table-striped table-sm">
+
+            </table>
+        </div>
+
+        <h2>Cargos</h2>
+        <div class="table-responsive small">
+            <table id="response-cargos" class="table table-striped table-sm">
+
+            </table>
+        </div>
+
+        <h2>Escritórios</h2>
+        <div class="table-responsive small">
+            <table id="response-escritorios" class="table table-striped table-sm">
+
+            </table>
+        </div>        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" integrity="sha384-gdQErvCNWvHQZj6XZM0dNsAoY4v+j5P1XDpNkcM3HJG1Yx04ecqIHk7+4VBOCHOG" crossorigin="anonymous"></script>
+    <script>
+
+        // Identificamos cada uma das tabelas que vamos trabalhar. 
+        const tabelaFuncionarios = document.getElementById("response-funcionarios");
+        const tabelaEscritorios = document.getElementById("response-escritorios");
+        const tabelaCargos = document.getElementById("response-cargos");
+
+        // Identificamos cada uma das URLs que vamos trabalhar
+        const urlFuncionarios = "http://localhost:8083/funcionarios/";
+        const urlEscritorios  = "http://localhost:8083/escritorios/";
+        const urlCargos  = "http://localhost:8083/cargos/";
+
+        // Buscamos a URL de funcionarios para consumir os dados da API. 
+        fetch(urlFuncionarios)
+            .then(response => {
+                return response.json();
+            })
+            .then(resposta => {
+                console.log("Abaixo o resultado do consumo da API")
+                console.log(resposta);
+
+                tabelaFuncionarios.innerHTML += "<thead><tr><th>Nome</th><th> E-mail</th><th> Ações</th></tr></thead>";
+                // Exemplo dos dados exibidos em tela
+                for(i = 0; i < resposta.length; i++) {
+                    tabelaFuncionarios.innerHTML += "<tr><td>" + resposta[i].nome + "</td><td>" + resposta[i].email + "</td><td><a class='btn btn-info' href='perfil.html?id=" + resposta[i].funcionarioId + "'>Editar</a></td></tr>";
+                }
+
+                tabelaFuncionarios.innerHTML += "<tfoot><tr><th>Total de funcionários: </th><th > "+  resposta.length +"  </th></tr></tfoot>";
+
+            })
+
+        // Buscamos a URL de escritórios para consumir os dados da API. 
+        fetch(urlEscritorios)
+            .then(response => {
+                return response.json();
+            })
+            .then(resposta => {
+                console.log("Abaixo o resultado do consumo da API")
+                console.log(resposta);
+
+                tabelaEscritorios.innerHTML += "<thead><tr><th>País</th><th>Estado</th><th>Cidade</th><th>Endereço</th></tr></thead>";
+                // Exemplo dos dados exibidos em tela
+                for(i = 0; i < resposta.length; i++) {
+                    tabelaEscritorios.innerHTML += "<tr><td>" + resposta[i].paisId + "</td><td>" + resposta[i].estado + "</td><td>" + resposta[i].cidade + "</td><td>" + resposta[i].endereco + "</td></tr>";
+                }
+
+                tabelaEscritorios.innerHTML += "<tfoot><tr><th>Total de escritórios: </th><th > "+  resposta.length +"  </th></tr></tfoot>";
+
+            })
+
+        // Buscamos a URL de cargos para consumir os dados da API. 
+        fetch(urlCargos)
+            .then(response => {
+                return response.json();
+            })
+            .then(resposta => {
+                console.log("Abaixo o resultado do consumo da API")
+                console.log(resposta);
+
+                tabelaCargos.innerHTML += "<thead><tr><th>Nome</th><th> Salário Máximo</th></tr></thead>";
+                // Exemplo dos dados exibidos em tela
+                for(i = 0; i < resposta.length; i++) {
+                    tabelaCargos.innerHTML += "<tr><td>" + resposta[i].cargoNome + "</td><td>" + resposta[i].maxSalario + "</td></tr>";
+                }
+
+                tabelaCargos.innerHTML += "<tfoot><tr><th>Total de cargos: </th><th > "+  resposta.length +"  </th></tr></tfoot>";
+
+            })            
+
+    </script>
+</body>
+</html>
