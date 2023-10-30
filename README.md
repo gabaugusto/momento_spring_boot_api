@@ -1,27 +1,26 @@
-# Projeto Momento (para Estudantes)
+# Projeto Momento em Spring Boot (para Estudantes)
 
-Bem-vindo à API da Projeto Momento! Este projeto foi criado para aprender e explorar o desenvolvimento de APIs usando o Spring Boot.
+Bem-vindo à API da Projeto Momento! Este projeto foi criado para aprender e explorar o desenvolvimento de APIs usando Spring Boot.
 
 Este projeto possui uma API básica construída usando Java SpringBoot. Serve como exemplo para uso em sala de aula, fornecendo uma introdução à construção de APIs com SpringBoot e mostrando vários recursos e potencialidades das tecnologias envolvidas.
 
 ## Tecnologias usadas
 
-HTML e CSS: Tecnologias para desenvolvimento de interface web.
+**HTML e CSS**: Tecnologias para desenvolvimento de interface web.
 
-Javascript: Interação do usuário e utilização do fetch para consumo da API. 
+**Javascript**: Interação do usuário e utilização do fetch para consumo da API. 
 
-Java: Linguagem de programação usada para construir a API.
+**Java**: Linguagem de programação utilizada para construir a API.
 
-SpringBoot: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo APIs RESTful.
+**SpringBoot**: Uma estrutura poderosa para desenvolver aplicativos Java, incluindo RESTful APIs.
 
-Maven: Uma ferramenta popular de automação de compilação e um sistema de gerenciamento de dependência usado para gerenciar dependências de projeto e criar a API.
+**Maven**: Uma ferramenta popular de automação de compilação e um sistema de gerenciamento de dependência usado para gerenciar dependências de projeto e criar a API.
 
-Spring Data JPA: Uma parte da estrutura Spring que fornece abstrações convenientes para trabalhar com bancos de dados usando Java Persistence API (JPA).
+**Spring Data JPA**: Uma parte da estrutura Spring que fornece abstrações convenientes para trabalhar com bancos de dados usando Java Persistence API (JPA).
 
-Postman: Uma plataforma de colaboração para desenvolvimento e teste de API, que pode ser usada para interagir e testar os endpoints da API.
+**Postman**: Uma plataforma de colaboração para desenvolvimento e teste de API, que pode ser usada para interagir e testar os endpoints da API.
 
-MySQL: 
-
+**MySQL**: MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto. Seu nome é uma combinação de "My", o nome da filha do cofundador Michael Widenius, My, e "SQL", a sigla para Structured Query Language.
 
 ## Configuração & Execução
 
