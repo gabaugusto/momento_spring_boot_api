@@ -17,7 +17,5 @@ public interface RelatorioVendasRepository extends JpaRepository<RelatorioVendas
     @Query(value = "SELECT produto, SUM(quantidade_vendida), SUM((quantidade_vendida * preco_unitario)/100) AS valor_total_vendido FROM relatorio_vendas GROUP BY produto;", nativeQuery = true)
     List<RelatorioVendas> relatorioVendasProduto();
 
-    @Query(value = "SELECT * FROM vendas_funcionario_performance;", nativeQuery = true)
-    List<RelatorioVendas> relatorioVendasPerfomanceConsultores();
 }
 
