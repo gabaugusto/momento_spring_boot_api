@@ -15,7 +15,10 @@ public class Funcionarios {
     @Column(name = "funcionario_id", nullable = false)
     int funcionarioId; // <- Srpring tem alguns problemas criando métodos customizados utilizando underscore, então, renomeamos essa coluna dentro do Spring
 
-    String nome;
+    @Column(name = "primeiro_nome", nullable = false)
+    String primeiroNome;
+
+    String sobrenome;
 
     String email;
 
@@ -44,12 +47,19 @@ public class Funcionarios {
         this.funcionarioId = funcionarioId;
     }
 
-    public String getNome() {
-        return nome;
+    public String getPrimeiroNome() {
+        return primeiroNome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPrimeiroNome(String primeiro_nome) {
+        this.primeiroNome = primeiro_nome;
+    }
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getEmail() {

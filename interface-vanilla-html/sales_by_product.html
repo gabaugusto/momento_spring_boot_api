@@ -11,40 +11,45 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Fetch data from the API endpoint
-      fetch('/sales_by_product')
+      fetch('http://localhost:8084/vendas/produto')
         .then(response => {
+          
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           return response.json();
         })
         .then(data => {
+          console.log(data)
           if (!Array.isArray(data)) {
             throw new Error('Invalid data format');
           }
 
           // Extracting product names and total quantity sold from the fetched data
-          const products = data.map(item => item.product);
-          const totalQuantitySold = data.map(item => item.total_quantity_sold);
-          const totalValueSold = data.map(item => item.total_value_sold);
+          const produtos = data.map(item => item.produto);
+          const totalQuantidadeVendida = data.map(item => item.quantidadeVendida);
+          const totalValorVendido = data.map(item => ((item.quantidadeVendida * item.precoUnitario)/1000));
 
+          console.log(produtos);
+          console.log(totalQuantidadeVendida);
+          console.log(totalValorVendido);
           // Chart.js setup for sales by product
           const ctx = document.getElementById('salesByProductChart').getContext('2d');
           new Chart(ctx, {
             type: 'bar',
             data: {
-              labels: products,
+              labels: produtos,
               datasets: [{
-                label: 'Sales by Product',
-                data: totalQuantitySold,
+                label: 'Vendas por Produto',
+                data: totalQuantidadeVendida,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
-              },             {
-                label: 'Value by Product',
-                data: totalValueSold,
-                backgroundColor: 'rgba(255, 199, 132, 0.2)',
-                borderColor: 'rgba(255, 199, 132, 1)',
+              }, {
+                label: 'Valor Somado das Vendas',
+                data: totalValorVendido,
+                backgroundColor: 'rgba(0, 33, 69, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
               }]
             },
@@ -55,13 +60,13 @@
                   beginAtZero: true,
                   title: {
                     display: true,
-                    text: 'Totals Sold'
+                    text: 'Vendas Somadas'
                   }
                 },
                 x: {
                   title: {
                     display: true,
-                    text: 'Products'
+                    text: 'Produtos'
                   }
                 }
               }

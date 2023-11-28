@@ -14,21 +14,20 @@ public class VendasController {
     @Autowired
     RelatorioVendasRepository dbConnection;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @GetMapping("/")
     public List<RelatorioVendas> findAllRecords(){
         return dbConnection.findAll();
     }
 
-
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "produto", method = RequestMethod.GET)
     public List<RelatorioVendas> vendasPorProduto() {
         return dbConnection.relatorioVendasProduto();
     }
 
-    @RequestMapping(value = "vendas", method = RequestMethod.GET)
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "data", method = RequestMethod.GET)
     public List<RelatorioVendas> vendasLinhaTempo() {
         return dbConnection.relatorioVendasLinhaTempo();
     }

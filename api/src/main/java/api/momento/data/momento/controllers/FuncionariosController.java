@@ -30,11 +30,12 @@ public class FuncionariosController {
     }
 
     //Encontrar um único elemento por nome
+    /*
     @CrossOrigin
     @RequestMapping(value = "nome/{nome}", method = RequestMethod.GET)
     public Optional<Funcionarios> searchByName(@PathVariable String nome) {
         return dbConnection.findFuncionariosBynome(nome);
-    }
+    } */
 
     @RequestMapping(value = "email/{email}", method = RequestMethod.GET)
     @CrossOrigin
