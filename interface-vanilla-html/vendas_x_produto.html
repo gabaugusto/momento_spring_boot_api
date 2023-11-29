@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sales by Product</title>
-  <!-- Include Chart.js -->
+  <title>Vendas por Produto</title>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Incluir o ChartsJS no projeto. -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
+  <h1>Exemplo de Página utilizando o ChartJS em contato com uma API</h1>
   <canvas id="salesByProductChart" width="800" height="400"></canvas>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+     
       // Fetch data from the API endpoint
-      fetch('http://localhost:8084/vendas/produto')
+      fetch('http://localhost:8081/vendas/produto')
         .then(response => {
-          
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -27,12 +36,18 @@
 
           // Extracting product names and total quantity sold from the fetched data
           const produtos = data.map(item => item.produto);
+          // produtos = ["lança-teias", "laço da verdade", "sabre de luz", ...]
           const totalQuantidadeVendida = data.map(item => item.quantidadeVendida);
-          const totalValorVendido = data.map(item => ((item.quantidadeVendida * item.precoUnitario)/1000));
+          // totalQuantidadeVendida = [29, 18, 67, 115]
+          const totalValorVendido = data.map(item => ((item.quantidadeVendida * item.precoUnitario)/5));
+          // totalValorVendido = [29, 18, 67, 115]
 
           console.log(produtos);
           console.log(totalQuantidadeVendida);
           console.log(totalValorVendido);
+
+
+          
           // Chart.js setup for sales by product
           const ctx = document.getElementById('salesByProductChart').getContext('2d');
           new Chart(ctx, {
@@ -42,19 +57,30 @@
               datasets: [{
                 label: 'Vendas por Produto',
                 data: totalQuantidadeVendida,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 0, 255, 0.2)',
+                borderColor: 'rgba(255, 0, 255, 1)',
                 borderWidth: 1
               }, {
                 label: 'Valor Somado das Vendas',
                 data: totalValorVendido,
-                backgroundColor: 'rgba(0, 33, 69, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(0, 255, 10, 0.2)',
+                borderColor: 'rgba(0, 255, 10, 1)',
                 borderWidth: 1
               }]
             },
+            responsive: true,
+            
             options: {
               indexAxis: 'y',
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                },
+                title: {
+                  display: true,
+                  text: 'Vendas por Produto'
+                }
+              },
               scales: {
                 y: {
                   beginAtZero: true,

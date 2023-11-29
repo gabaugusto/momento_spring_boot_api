@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sales Over Time</title>
+  <title>Vendas Totais ao longo do tempo</title>
   <!-- Include Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Include Moment.js library -->
@@ -15,7 +15,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Fetch data from the API endpoint
-      fetch('http://localhost:8084/vendas/data')
+      fetch('http://localhost:8081/vendas/data')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -28,9 +28,9 @@
           }
 
           // Extracting dates and total sales from the fetched data
-          const dates = data.map(item => item.vendaData);
-          const totalVendas = data.map(item => item.vendas_totais);
-          console.log(dates);
+          const datas = data.map(item => item.vendaData);
+          const totalVendas = data.map(item =>(item.quantidadeVendida * item.precoUnitario));
+          console.log(datas);
           console.log(totalVendas);
 
           // Chart.js setup
@@ -38,7 +38,7 @@
           new Chart(ctx, {
             type: 'line',
             data: {
-              labels: dates,
+              labels: datas,
               datasets: [{
                 label: 'Vendas Totais ao longo do tempo',
                 data: totalVendas,
@@ -56,13 +56,13 @@
                   },
                   title: {
                     display: true,
-                    text: 'Date'
+                    text: 'Período'
                   }
                 },
                 y: {
                   title: {
                     display: true,
-                    text: 'Total Sales'
+                    text: 'Vendas Totais'
                   }
                 }
               }

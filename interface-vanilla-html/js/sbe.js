@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch data from the API endpoint
-  fetch('../sales/employee/performance')
+  fetch('http://localhost:8081/performance/')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Extracting employee names and total sales from the fetched data
-      const employees = dataArray.map(item => item.employee_name);
-      const totalSales = dataArray.map(item => item.total_sales);
+      const employees = dataArray.map(item => item.funcionarioNome);
+      const totalSales = dataArray.map(item => item.totalVendas);
 
       // Chart.js setup for employee performance comparison
       const ctx = document.getElementById('employeePerformanceChart').getContext('2d');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
           labels: employees,
           datasets: [{
-            label: 'Employee Performance Comparison',
+            label: 'Custo por Escritório',
             data: totalSales,
             backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE", "#3D9970", "#111111", "#AAAAAA"],
             borderWidth: 1
@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Total Sales'
+                text: 'Vendas Totais'
               }
             },
             y: {
               title: {
                 display: true,
-                text: 'Employees'
+                text: 'Funcionários'
               }
             }
           }

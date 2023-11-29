@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch data from the API endpoint
-  fetch('../offices/costs')
+  fetch('http://localhost:8081/relatorio_escritorio/escritorios')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Extracting office's  names and total costs from the fetched data
-      const offices = data.map(item => item.office_name);
-      const costs = data.map(item => item.costs);
+      const offices = data.map(item => item.escritorioNome);
+      const costs = data.map(item => item.custo);
 
       // Chart.js setup for costs by office
       const ctx = document.getElementById('officesCosts').getContext('2d');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
           labels: offices,
           datasets: [{
-            label: 'Costs by Offices',
+            label: 'Custos',
             data: costs,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Offices Names'
+                text: 'Escritorios'
               }
             },
             x: {
               title: {
                 display: true,
-                text: 'Total Costs'
+                text: 'Custo Total'
               }
             }
           }

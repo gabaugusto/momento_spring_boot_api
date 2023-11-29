@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch data from the API endpoint
-    fetch('../sales_over_time')
+    fetch('http://localhost:8081/vendas/data')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -13,20 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Extracting dates and total sales from the fetched data
-        const dates = data.map(item => item.date);
-        const totalSales = data.map(item => item.total_sales);
-        console.log(dates);
-        console.log(totalSales);
+        const datas = data.map(item => item.vendaData);
+        const totalVendas = data.map(item =>(item.quantidadeVendida * item.precoUnitario));        
+        console.log(datas);
+        console.log(totalVendas);
 
         // Chart.js setup
         const ctx = document.getElementById('salesChart').getContext('2d');
         new Chart(ctx, {
           type: 'line',
           data: {
-            labels: dates,
+            labels: datas,
             datasets: [{
-              label: 'Total Sales Over Time',
-              data: totalSales,
+              label: 'Vendas Totais ao longo do tempo',
+              data: totalVendas,
               backgroundColor: 'rgba(54, 162, 235, 0.2)',
               borderColor: 'rgba(54, 162, 235, 1)',
               borderWidth: 1
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
               y: {
                 title: {
                   display: true,
-                  text: 'Total Sales'
+                  text: 'Vendas Totais'
                 }
               }
             }

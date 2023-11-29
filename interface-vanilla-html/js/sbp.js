@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch data from the API endpoint
-  fetch('../sales_by_product')
+  fetch('http://localhost:8081/vendas/produto')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -13,25 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Extracting product names and total quantity sold from the fetched data
-      const products = data.map(item => item.product);
-      const totalQuantitySold = data.map(item => item.total_quantity_sold);
-      const totalValueSold = data.map(item => item.total_value_sold);
+      const produtos = data.map(item => item.produto);
+      // produtos = ["lança-teias", "laço da verdade", "sabre de luz", ...]
+      const totalQuantidadeVendida = data.map(item => item.quantidadeVendida);
+      // totalQuantidadeVendida = [29, 18, 67, 115]
+      const totalValorVendido = data.map(item => ((item.quantidadeVendida * item.precoUnitario)/5));
+      // totalValorVendido = [29, 18, 67, 115]
 
       // Chart.js setup for sales by product
       const ctx = document.getElementById('salesByProductChart').getContext('2d');
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: products,
+          labels: produtos,
           datasets: [{
-            label: 'Sales by Product',
-            data: totalQuantitySold,
+            label: 'Vendas por produto',
+            data: totalQuantidadeVendida,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
-          },             {
-            label: 'Value by Product',
-            data: totalValueSold,
+          },{
+            label: 'Valores por produto',
+            data: totalValorVendido,
             backgroundColor: 'rgba(255, 199, 132, 0.2)',
             borderColor: 'rgba(255, 199, 132, 1)',
             borderWidth: 1
@@ -44,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Totals Sold'
+                text: 'Total Vendido'
               }
             },
             x: {
               title: {
                 display: true,
-                text: 'Products'
+                text: 'Produtos'
               }
             }
           }
